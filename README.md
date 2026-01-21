@@ -1,6 +1,6 @@
 # Ritmo - Marketplace Nacional de Corridas de Rua, Trilhas e Maratonas
 
-![Ritmo Logo](frontend/src/assets/logo.png)
+![Ritmo Logo](frontend/assets/logo.png)
 
 ## Sobre
 
@@ -76,3 +76,4 @@ npm install
 npm run dev
 
   
+
