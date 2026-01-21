@@ -1,0 +1,245 @@
+.logo-name{
+    display: flex;
+    align-items: center; 
+    gap: clamp(8px, 2vw, 16px);
+}
+.logo-name h1 {
+    font-size: 18px;
+    font-family: bold;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.logo-name img {
+    width: 40px;
+    height: auto;
+    border-radius: 25%;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 1px 10px;
+    width: 100%;
+    max-width: 320px;
+    background-color: #fff;
+    gap: clamp(8px, 2vw, 16px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 10;
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.entra-cadastro {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 16px);
+}
+
+.btn-entrar {
+    background-color: transparent;  
+    color: #1E88E5;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-entrar:hover {
+    background-color: #E3F2FD;
+    color: #1E88E5;
+}
+
+.btn-entrar:active {
+    background-color: #FFFFFF;
+    color: #263238;
+}
+
+
+.btn-cadastro{
+    border: none;
+    background-color:   #FF7A00;
+    color: #fff;
+    border: none;
+    border-radius:  12px;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-cadastro:hover {
+    background-color: #ff9333;
+}
+
+.btn-cadastro:active {
+    background-color: #FFFFFF;
+    color: #263238;
+}
+
+.dark-blue {
+    color: #1E3A5F;
+}
+
+.light-blue {
+    color: #1E88E5;
+}
+
+.slogan {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.titulo-2 {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #585858;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 8px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: clamp(16px, 2.5vw, 20px);
+    padding: 10px 100px;
+}
+
+nav a:hover {
+    background-color: #E3F2FD;
+    color: #1E88E5;
+}
+
+.estado{
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    border-radius: 8px;
+    border: transparent;
+}
+.mes{
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    border-radius: 8px;
+    border: transparent;
+}
+.distancia{
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    border-radius: 8px;
+    border: transparent;
+}
+.modalidade{
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    border-radius: 8px;
+    border: transparent;
+}
+
+.frame-races {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    align-items: center; 
+    gap: clamp(8px, 2vw, 16px);
+}
+
+.race-image {
+    display: block;    
+    width: 100%;     
+    height: 200px;
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+    margin: 0;       
+    margin: 0 0 30px 0; 
+}
+
+.titulo-race {
+    text-align: center;
+    padding: 0 15px 15px 15px;
+    
+    margin: 0 0 5px 0; 
+}
+
+.local-race {
+    padding: 0 15px 5px 15px;
+    margin: 0;
+    color: black;
+    font-size: 14px; 
+    margin: 0 0 10px 0; 
+
+}
+
+.data-race {
+  padding: 0 15px 15px 15px;
+  margin: 0;
+  color: black;
+  font-size: 14px; 
+}   
+
+.distancia-linha-race{
+    border:none;
+    gap: clamp(4px, 1vw, 8px);
+    display: flex;
+    flex-direction: row;
+}
+
+.distancias-race{
+    background-color: #E3F2FD;  
+    color: #1E88E5;
+    border: none;
+    border-radius:  12px;
+    font-size: 14px;
+    padding: 4px 8px;
+    margin: 4px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%; 
+}
+
+.modalidade-race {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    color: #11538d;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    pointer-events: none;
+
+}

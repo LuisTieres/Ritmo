@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ritmo</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <script src="src/script.js" defer></script>
+    
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo-name">
+            <img src="assets/logo.png" alt="Running training">
+            <h1>Ritmo</h1>
+        </div>
+        <div class="search-box">
+            <button>
+                🔍
+            </button>
+            <input type="text" placeholder="Buscar por corrida, cidade ou estado">
+        </div>
+
+        <div class="entra-cadastro">
+            <button type="button" class="btn-entrar">Entrar</button>
+            <button type="button" class="btn-cadastro">Cadastro</button>
+        </div>
+    </div>
+    <section class="banner">
+
+        <h2 class="slogan">
+        
+            <span class="dark-blue">Um cadastro para</span>
+            <span class="light-blue">todas as suas<br>
+            corridas</span>
+        </h2>
+        
+        <p class="titulo-2">
+            Encontre e inscreva-se nas melhores corridas de rua, trilha e maratonas do Brasil<br>
+            em poucos cliques.
+        </p>
+    </section>
+
+    <nav>
+        <ul>
+            <li><a href="#">Todos</a></li>
+            <li><a href="#">Rua</a></li>
+            <li><a href="#">Trilha</a></li>
+            <li><a href="#">Maratona</a></li>
+        </ul>
+    </nav>
+    <div class="info">
+        <div class="filtros">
+            <p>Filtros</p>
+
+            <label for="estado">Estados:</label>
+
+            <select class="estado" id="estado">
+                <option value="">Todos os Estados</option>
+            </select>
+
+            <label for="mes">Mês:</label>
+
+            <select class="mes" id="mes">
+                <option value="">Todos os Meses</option>
+            </select>
+
+            <label for="distancia">Distância:</label>
+
+            <select class="distancia" id="distancia">
+                <option value="">Todas as Distâncias</option>
+            </select>
+
+            <label for="modalidade">Modalidade:</label>
+
+            <select class="modalidade" id="modalidade">
+                <option value="">Todos os Tipos</option>
+            </select>
+        </div>
+
+        <div class="races" id="races-container">
+        </div>
+    </div>
+</body>
+</html>
