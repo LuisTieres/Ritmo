@@ -19,7 +19,12 @@ const modalidade = [
     ];
 
 const races = [
-  { title: "Maratona Internacional de São Paulo 2026", image: "assets/saopaulo.jfif", local: "São Paulo, SP", data: "15 de Março de 2026", distancias: ["5K", "10K", "21K", "42K"], modalidade: "Maratona" },
+  { title: "Maratona Internacional de São Paulo 2026", image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&h=400&fit=crop", local: "São Paulo, SP", data: "15 de Março de 2026", distancias: ["5K", "10K", "21K", "42K"], modalidade: "Maratona", preco: "R$ 89,90" },
+  { title: "Corrida Trail do Pão de Açúcar", image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&h=400&fit=crop", local: "Rio de Janeiro, RJ", data: "22 de Abril de 2026", distancias: ["10K", "21K"], modalidade: "Trilha", preco: "R$ 120,00" },
+  { title: "Corrida Trail do Pão de Açúcar", image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&h=400&fit=crop", local: "Rio de Janeiro, RJ", data: "22 de Abril de 2026", distancias: ["10K", "21K"], modalidade: "Trilha", preco: "R$ 120,00" },
+  { title: "Corrida Trail do Pão de Açúcar", image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&h=400&fit=crop", local: "Rio de Janeiro, RJ", data: "22 de Abril de 2026", distancias: ["10K", "21K"], modalidade: "Trilha", preco: "R$ 120,00" },
+  { title: "Corrida Trail do Pão de Açúcar", image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&h=400&fit=crop", local: "Rio de Janeiro, RJ", data: "22 de Abril de 2026", distancias: ["10K", "21K"], modalidade: "Trilha", preco: "R$ 120,00" },
+
 ];
 
 function carregaCombox(lista, tipo) {
@@ -80,21 +85,42 @@ function criarCorridas(race){;
         distancialinha.appendChild(distanciaElem);
     });
 
+    const container_vercorrida = document.createElement("div");
+    container_vercorrida.classList.add("container-ver-corrida");
+
+    const container_preco = document.createElement("div");
+    container_preco.classList.add("container-preco-race");
     
+    const text_preco = document.createElement("p");
+    text_preco.classList.add("text-preco-race");
+    text_preco.textContent  = "A partir de";
+    container_preco.appendChild(text_preco);
+
+    const preco = document.createElement("p");
+    preco.classList.add("preco-race");
+    preco.textContent  = corrida.preco;
+    container_preco.appendChild(preco);
+
+    container_vercorrida.appendChild(container_preco);
+
+    const botao_vercorrida = document.createElement("button");
+    botao_vercorrida.classList.add("botao-ver-corrida");
+    botao_vercorrida.textContent = "Ver Corrida";
+    container_vercorrida.appendChild(botao_vercorrida);
 
     frame.appendChild(containerImagem);
     frame.appendChild(titulo);
     frame.appendChild(local);
     frame.appendChild(data);
     frame.appendChild(distancialinha);
+    frame.appendChild(container_vercorrida);
 
-    // Adiciona o frame ao container
+
     container.appendChild(frame);
 
-    // Opcional: adiciona click para ir pra página da corrida
     frame.style.cursor = "pointer";
     frame.onclick = function() {
-      window.location.href = "race.html"; // ou outro link específico
+      window.location.href = "race.html";
     };
   });
 }

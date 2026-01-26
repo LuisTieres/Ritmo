@@ -4,11 +4,13 @@
     gap: clamp(8px, 2vw, 16px);
 }
 .logo-name h1 {
-    font-size: 18px;
+    font-size: 20px;
     font-family: bold;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
+    color: #263238;
 }
+
 
 .logo-name img {
     width: 40px;
@@ -51,6 +53,7 @@
     display: flex;
     align-items: center;
     gap: clamp(8px, 2vw, 16px);
+    margin-right: 5%;
 }
 
 .btn-entrar {
@@ -128,6 +131,7 @@ nav a{
     transition: background-color 0.2s ease, color 0.2s ease;
     font-size: clamp(16px, 2.5vw, 20px);
     padding: 10px 100px;
+    margin-top: 50px;
 }
 
 nav a:hover {
@@ -162,15 +166,6 @@ nav a:hover {
     padding: 8px;
     border-radius: 8px;
     border: transparent;
-}
-
-.frame-races {
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    overflow: hidden;
-    width: 300px;
-    align-items: center; 
-    gap: clamp(8px, 2vw, 16px);
 }
 
 .race-image {
@@ -241,5 +236,209 @@ nav a:hover {
     font-size: 12px;
     border-radius: 8px;
     pointer-events: none;
+}
 
+.container-ver-corrida{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+
+}
+.container-preco-race{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+}
+.botao-ver-corrida{
+    gap: clamp(8px, 2vw, 16px);
+    position: relative;
+    left: 15%;
+
+    border-radius: 20%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #FF7A00;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: 8px 12px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    width: 40%;     
+    height: 18%;
+    margin-top: 5%;
+    font-weight: bold;
+    text-align: left;
+}
+.botao-ver-corrida:hover {
+    background-color: #ff9333; 
+}
+
+.container-ver-corrida{
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.text-preco-race{
+    color: rgb(168, 168, 168);
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.preco-race{
+    font-size: 24px;
+    font-weight: 700;
+    color: #FF7A00; 
+    margin-top: 0;
+}
+
+
+.atleta{
+    display: flex;
+    flex-direction: column;
+    color: #263238;
+    width: auto;
+    justify-self: center;
+
+}
+
+
+.Organizadores{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: #263238;
+    width: auto;
+    justify-self: center;
+}
+.social-media{
+    display: flex;
+    flex-direction: column;
+    color: #263238;
+    justify-self: end;
+}
+.atleta a{
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.Organizadores a{
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.atleta a:hover{
+    text-decoration: none;
+    color: hsl(208, 78%, 52%);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.Organizadores a:hover{
+    text-decoration: none;
+    color: hsl(208, 78%, 52%);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.texto-um-cadastro{
+    margin-top: 10px; 
+    font-size: 14px;
+    color: rgb(114, 114, 114);
+    white-space: normal;      
+    word-wrap: break-word;  
+    margin: none;
+}
+
+
+.social-media a{
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.social-media a:hover{
+    text-decoration: none;
+    color: hsl(208, 78%, 52%);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.ritmo-log{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 1vw, 8px);
+    max-width: 200px;
+}
+
+.logo-name-footer{
+    display: flex;
+    align-items: center; 
+    gap: clamp(8px, 2vw, 16px);
+    justify-self: start;
+
+}
+.logo-name-footer h1 {
+    font-size: 20px;
+    font-family: bold;
+    font-weight: 700;
+    line-height: 3.5;
+    color: #263238;
+}
+
+.logo-name-footer img {
+    width: 40px;
+    height: auto;
+    border-radius: 25%;
+}
+
+.footer p::after{
+    content: "";
+    position: absolute;
+    left: 3%;
+    bottom: 0;
+
+    width: 94%;
+    height: 1px;
+    background: rgb(230, 228, 228);
+}
+
+.privacidade{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    color: rgb(114, 114, 114);
+    text-align: center;
+
+    gap: clamp(64px, 16vw, 160px);
+    padding: 0 clamp(16px, 4vw, 40px) clamp(16px, 4vw, 40px) clamp(16px, 4vw, 40px);
+    margin-top: 0%;
+}
+
+.links-privacidade{
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.links-privacidade a{
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+    margin-left: 10px;
+}
+
+.links-privacidade a:hover{
+    text-decoration: none;
+    color: hsl(208, 78%, 52%);
+    font-size: 14px;
+    margin-bottom: 8px;
 }
