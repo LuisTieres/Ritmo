@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+# Ritmo - Marketplace Nacional de Corridas de Rua, Trilhas e Maratonas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Ritmo Logo](frontend/src/assets/logo.png)
 
-Currently, two official plugins are available:
+## Sobre
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ritmo é um marketplace web responsivo focado em centralizar e facilitar inscrições para corridas esportivas no Brasil.  
+Com um cadastro único, atletas amadores e profissionais podem se inscrever em diferentes provas com poucos cliques, simplificando o processo e evitando múltiplos cadastros.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Objetivos do Projeto
 
-## Expanding the ESLint configuration
+- Centralizar eventos de corrida em uma única plataforma  
+- Facilitar o cadastro único do atleta para múltiplas inscrições  
+- Oferecer uma experiência rápida, clara e confiável  
+- Atender tanto atletas quanto organizadores  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades Principais (MVP)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Explorar corridas com busca e filtros  
+- Visualizar detalhes completos da prova  
+- Cadastro e login com autenticação  
+- Perfil do atleta com dados pessoais e histórico  
+- Processo de inscrição / checkout simplificado  
+- Confirmação imediata da inscrição  
+- Dashboard para organizadores gerenciarem eventos e inscritos  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Frontend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React  
+- TypeScript  
+- Vite  
+- Tailwind CSS  
+- React Router  
+- Axios  
+
+### Backend (planejado)
+
+- Node.js  
+- Express  
+- PostgreSQL  
+- JWT para autenticação  
+- Integração com gateway de pagamento (Stripe / Mercado Pago)
+
+---
+
+## Estrutura do Projeto
+ritmo/
+├── frontend/ # Web app React (Mobile-first, responsivo)
+├── backend/ # API REST Node.js + Express
+├── docs/ # Documentação técnica
+├── README.md # Este arquivo
+└── .gitignore
+
+
+---
+
+## Começando (Frontend)
+
+```bash
+# Clone o repositório
+git clone https://github.com/seuusuario/ritmo.git
+cd ritmo/frontend
+
+# Instale dependências
+npm install
+
+# Rode em modo desenvolvimento
+npm run dev
+
+  
+
