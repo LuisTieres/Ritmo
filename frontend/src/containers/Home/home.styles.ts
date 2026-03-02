@@ -1,142 +1,6 @@
 // src/containers/styles/global.ts
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-
-  box-sizing: border-box; /* ⭐ FIX */
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 clamp(16px, 4vw, 40px);
-
-  background-color: white;
-  border-bottom: 1px solid #e5e7eb;
-
-  z-index: 1000;
-
-  /* LOGO */
-  .logo-name {
-    display: flex;
-    align-items: center;
-    gap: clamp(8px, 2vw, 16px);
-  }
-
-  .logo-name h1 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #263238;
-  }
-
-  .logo-name img {
-    width: 40px;
-    height: auto;
-    border-radius: 25%;
-  }
-
-  /* SEARCH */
-  .search-box {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    padding: 1px 10px;
-    width: 100%;
-    max-width: 320px;
-    background-color: #fff;
-    gap: clamp(8px, 2vw, 16px);
-
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .search-box input {
-    border: none;
-    outline: none;
-    flex: 1;
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  .search-box button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  /* BUTTONS */
-  .entra-cadastro {
-    display: flex;
-    align-items: center;
-    gap: clamp(8px, 2vw, 16px);
-  }
-
-  .btn-entrar {
-    background: transparent;
-    color: #1e88e5;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-
-  .btn-cadastro {
-    background-color: #ff7a00;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-
-  .btn-conteudo {
-    background: transparent;
-    color: black;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-
-  .btn-cadastro:hover {
-    background-color: #ff9333;
-  }
-
-  .btn-cadastro:active {
-    background-color: #FFFFFF;
-    color: #263238;
-  }
-  .btn-entrar:hover {
-    background-color: #E3F2FD;
-    color: #1E88E5;
-  }
-
-  .btn-entrar:active {
-    background-color: #FFFFFF;
-    color: #263238;
-  }
-
-  .btn-conteudo:hover {
-    background-color: #E3F2FD;
-    color: black;
-  }
-
-  .btn-conteudo:active {
-    background-color: #FFFFFF;
-    color: #263238;
-  }
-`;
 
 export const BannerContainer = styled.section`
   display: flex;
@@ -170,18 +34,13 @@ export const BannerContainer = styled.section`
     color: #585858;
 }
 `;
-
 export const NavFiltrosContainer = styled.nav`
-  width: 100%;                 /* full width of screen */
+  width: 100%;
   display: flex;
   justify-content: center;
-
   background-color: #FAFAFA;
 
-  /* prevent overflow */
   overflow-x: auto;
-
-  /* smooth scrolling on mobile */
   scrollbar-width: none;
   -ms-overflow-style: none;
 
@@ -191,42 +50,48 @@ export const NavFiltrosContainer = styled.nav`
 
   ul {
     display: flex;
-    flex-wrap: wrap;          /* allows breaking line if needed */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-    gap: clamp(6px, 1vw, 16px);
+    gap: 12px;
 
     list-style: none;
     margin: 0;
     padding: 16px clamp(16px, 4vw, 40px);
 
     width: 100%;
-    max-width: 1200px;        /* optional: limit max width like modern sites */
+    max-width: 1200px;
   }
 
   li {
     display: flex;
   }
 
-  a {
-    text-decoration: none;
-    color: #263238;
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
 
+    color: #263238;
     font-size: clamp(14px, 2vw, 18px);
     font-weight: 500;
 
-    padding: 8px clamp(120px, 2vw, 20px);
-
+    padding: 8px 20px;
     border-radius: 20px;
-    white-space: nowrap;      /* prevent text breaking */
+    white-space: nowrap;
 
     transition: all 0.2s ease;
   }
 
-  a:hover {
+  button:hover {
     background-color: #E3F2FD;
     color: #1E88E5;
+  }
+
+  button.active {
+    background-color: #1E88E5;
+    color: white;
   }
 `;
 export const FiltrosCorridaContainer = styled.aside`
@@ -371,14 +236,17 @@ export const Overlay = styled.div<{ open: boolean }>`
 
 export const RacesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   padding: 24px;
+  width: 100%;
 `;
 
 export const RaceCard = styled.div`
+  width: 100%;
   position: relative;
-
+  flex: 1 1 280px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   gap: 12px;

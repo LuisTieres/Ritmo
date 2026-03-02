@@ -1,13 +1,21 @@
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { estados, meses, distancias, modalidades } from '../../data/filters.ts'
 import { races } from '../../data/races.ts'
+import{
+  HeaderContainer,
+  FooterContainer,
+  FooterContent,
+  LogoSection,
+  Column,
+  BottomBar,
+  PrivacyLinks
+} from "../styles/global.styles";
 
 import {
   NavFiltrosContainer,
   BannerContainer,
-  HeaderContainer,
   FiltrosCorridaContainer,
   FiltroButton,
   Overlay,
@@ -19,17 +27,17 @@ import {
   DistancesRow,
   PriceContainer,
   DistanceTag,
-  ModalityBadge
+  ModalityBadge,
 } from "./home.styles";
 
 export default function HomePage() {
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
   const [estado, setEstado] = useState('')
   const [mes, setMes] = useState('')
   const [distancia, setDistancia] = useState('')
   const [modalidade, setModalidade] = useState('')
-   
+  const [categoria, setCategoria] = useState("");
 
   return (
     <main style={{ marginTop: "80px" }}>
@@ -78,14 +86,14 @@ export default function HomePage() {
 
       <NavFiltrosContainer>
         <ul>
-          <li><a href="#">Todos</a></li>
-          <li><a href="#">Rua</a></li>
-          <li><a href="#">Trilha</a></li>
-          <li><a href="#">Maratona</a></li>
+          <li><button onClick={() => setCategoria("")}>Todos</button></li>
+          <li><button onClick={() => setCategoria("Rua")}>Rua</button></li>
+          <li><button onClick={() => setCategoria("Trilha")}>Trilha</button></li>
+          <li><button onClick={() => setCategoria("Maratona")}>Maratona</button></li>
         </ul>
       </NavFiltrosContainer>
 
-      <section style={{ display: "flex" }}>
+      <section style={{ display: "flex", width : "100%" }}>
 
         <FiltrosCorridaContainer>
           <h3>Filtros</h3>
@@ -119,7 +127,9 @@ export default function HomePage() {
         </FiltrosCorridaContainer>
 
         <RacesContainer>
-          {races.map((race) => (
+          {races
+            .filter(race => !categoria || race.modality === categoria)
+            .map((race) => (
             <RaceCard key={race.id}>
 
               <img src={race.image} alt={race.title} />
@@ -149,7 +159,7 @@ export default function HomePage() {
                 </PriceContainer>
 
                 <ViewButton
-                 // onClick={() => navigate(`/race/${race.id}`)}
+                  onClick={() => navigate(`/race/${race.id}`)}
                 >
                   Ver Corrida
                 </ViewButton>
@@ -205,7 +215,52 @@ export default function HomePage() {
         </select>
 
       </MobileDrawer>
+      <FooterContainer>
+        <FooterContent>
 
+          <LogoSection>
+            <div>
+              <img src="/assets/logo.png" alt="Running training" />
+              <h1>Ritmo</h1>
+            </div>
+            <p>
+              Um cadastro para todas as suas corridas. Inscreva-se de forma rápida
+              e segura.
+            </p>
+          </LogoSection>
+
+          <Column>
+            <strong>Para Atleta</strong>
+            <a href="#">Como funciona</a>
+            <a href="#">Minhas inscrições</a>
+            <a href="#">Política de reembolso</a>
+            <a href="#">FAQ</a>
+          </Column>
+
+          <Column>
+            <strong>Para Organizadores</strong>
+            <a href="#">Sou organizador</a>
+            <a href="#">Cadastrar corrida</a>
+            <a href="#">Planos e preços</a>
+            <a href="#">Suporte</a>
+          </Column>
+
+          <Column>
+            <strong>Contato</strong>
+            <a href="#">contato@ritmo.com.br</a>
+          </Column>
+
+        </FooterContent>
+      </FooterContainer>
+
+      <BottomBar>
+        <p>© 2026 Ritmo. Todos os direitos reservados.</p>
+
+        <PrivacyLinks>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Privacidade</a>
+        </PrivacyLinks>
+      </BottomBar>
 
 
     </main>
