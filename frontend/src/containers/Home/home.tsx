@@ -3,16 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { estados, meses, distancias, modalidades } from '../../data/filters.ts'
 import { races } from '../../data/races.ts'
-import{
-  HeaderContainer,
-  FooterContainer,
-  FooterContent,
-  LogoSection,
-  Column,
-  BottomBar,
-  PrivacyLinks
-} from "../styles/global.styles";
-
+import Header from "../Head/Head";
+import Footer from "../Footer/Footer.tsx";
+import type{ Heads } from '../../types/Head.ts'
 import {
   NavFiltrosContainer,
   BannerContainer,
@@ -38,33 +31,15 @@ export default function HomePage() {
   const [distancia, setDistancia] = useState('')
   const [modalidade, setModalidade] = useState('')
   const [categoria, setCategoria] = useState("");
+  
+  const headType: Heads = {
+    head_type: true
+  }
 
   return (
     <main style={{ marginTop: "80px" }}>
 
-      <HeaderContainer>
-
-        <div className="logo-name">
-          <img src="/assets/logo.png" alt="Ritmo" />
-          <h1>Ritmo</h1>
-
-        </div>
-
-        <div className="search-box">
-          <button type="button">🔍</button>
-          <input
-            type="text"
-            placeholder="Buscar por corrida, cidade ou estado"
-          />
-        </div>
-
-        <div className="entra-cadastro">
-          <button className="btn-conteudo">Conteúdo</button>
-          <button className="btn-entrar">Entrar</button>
-          <button className="btn-cadastro">Cadastro</button>
-        </div>
-
-      </HeaderContainer>
+      <Header head_type={headType.head_type}/>
 
       <BannerContainer>
         <h2 className="slogan">
@@ -137,6 +112,7 @@ export default function HomePage() {
               <ModalityBadge>
                 {race.modality}
               </ModalityBadge>
+              
 
               <h2>{race.title}</h2>
 
@@ -215,53 +191,8 @@ export default function HomePage() {
         </select>
 
       </MobileDrawer>
-      <FooterContainer>
-        <FooterContent>
-
-          <LogoSection>
-            <div>
-              <img src="/assets/logo.png" alt="Running training" />
-              <h1>Ritmo</h1>
-            </div>
-            <p>
-              Um cadastro para todas as suas corridas. Inscreva-se de forma rápida
-              e segura.
-            </p>
-          </LogoSection>
-
-          <Column>
-            <strong>Para Atleta</strong>
-            <a href="#">Como funciona</a>
-            <a href="#">Minhas inscrições</a>
-            <a href="#">Política de reembolso</a>
-            <a href="#">FAQ</a>
-          </Column>
-
-          <Column>
-            <strong>Para Organizadores</strong>
-            <a href="#">Sou organizador</a>
-            <a href="#">Cadastrar corrida</a>
-            <a href="#">Planos e preços</a>
-            <a href="#">Suporte</a>
-          </Column>
-
-          <Column>
-            <strong>Contato</strong>
-            <a href="#">contato@ritmo.com.br</a>
-          </Column>
-
-        </FooterContent>
-      </FooterContainer>
-
-      <BottomBar>
-        <p>© 2026 Ritmo. Todos os direitos reservados.</p>
-
-        <PrivacyLinks>
-          <a href="#">Termos de Uso</a>
-          <a href="#">Privacidade</a>
-        </PrivacyLinks>
-      </BottomBar>
-
+      
+    <Footer />
 
     </main>
   );

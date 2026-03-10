@@ -5,7 +5,7 @@ export const races: Race[] = [
   {
     id: "sp-marathon-2026",
     title: "São Paulo Marathon",
-    image: "/assets/sp.jpg",
+    image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&h=400&fit=crop",
     location: "São Paulo - SP",
     date: "12 Mar 2026",
     distances: ["5km", "10km", "21km"],

@@ -139,13 +139,14 @@ export const HeaderContainer = styled.header`
 
 
 export const FooterContainer = styled.footer`
-  background: #FAFAFA;
+  background: #ffffff;
   padding: 60px clamp(16px, 4vw, 40px);
 `;
 
 export const FooterContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  background: #ffffff;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

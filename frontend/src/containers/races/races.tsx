@@ -1,91 +1,50 @@
 import { races } from "../../data/races";
-import { ImageContainer } from "./races.styles";
-import{
-  HeaderContainer,
-  FooterContainer,
-  FooterContent,
-  LogoSection,
-  Column,
-  BottomBar,
-  PrivacyLinks
-} from "../styles/global.styles";
+import type{ Heads } from '../../types/Head.ts'
+import { ImageContainer, Botton_Bar, ModalityBadge, Titulo_race,Local_Data_Container } from "./races.styles";
+import { useNavigate } from "react-router-dom";
+import Header from "../Head/Head";
+import Footer from "../Footer/Footer.tsx";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaCalendar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import { Button } from "style-components";
 
 export default function RacePage() {
     const { id } = useParams();
-
+    const navigate = useNavigate();
     const race = races.find(r => r.id === id);
 
     if (!race) {
         return <p>Corrida não encontrada</p>;
     }
 
+     const headType: Heads = {
+        head_type: false
+      }
+
     return (
-        <main style={{ marginTop: "80px" }}>
-            <HeaderContainer>
+        <main style={{ marginTop: "100px" }}>
+            <Header head_type={headType.head_type}/>
+            <Botton_Bar>
+                <Button onClick={() => navigate(`/`)}>← Voltar</Button>
+            </Botton_Bar>
             
-                <div className="logo-name">
-                  <img src="/assets/logo.png" alt="Ritmo" />
-                  <h1>Ritmo</h1>
-                </div>
-            
-                <div className="entra-cadastro">
-                  <button className="btn-conteudo">Conteúdo</button>
-                  <button className="btn-entrar">Entrar</button>
-                  <button className="btn-cadastro">Cadastro</button>
-                </div>
-            
-            </HeaderContainer>
             <ImageContainer>
                 <img src={race.image} alt={race.title} />
+                <ModalityBadge>
+                    {race.modality}
+                </ModalityBadge>
+
+                <Titulo_race>
+                    {race.title}
+                </Titulo_race>
+
+                <Local_Data_Container>
+                    <p> <FaLocationDot /> {race.location}</p>
+                    <p> <FaCalendar /> {race.date}</p>
+                </Local_Data_Container>
             </ImageContainer>
-
-            <FooterContainer>
-                <FooterContent>
-
-                <LogoSection>
-                    <div>
-                    <img src="/assets/logo.png" alt="Running training" />
-                    <h1>Ritmo</h1>
-                    </div>
-                    <p>
-                    Um cadastro para todas as suas corridas. Inscreva-se de forma rápida
-                    e segura.
-                    </p>
-                </LogoSection>
-
-                <Column>
-                    <strong>Para Atleta</strong>
-                    <a href="#">Como funciona</a>
-                    <a href="#">Minhas inscrições</a>
-                    <a href="#">Política de reembolso</a>
-                    <a href="#">FAQ</a>
-                </Column>
-
-                <Column>
-                    <strong>Para Organizadores</strong>
-                    <a href="#">Sou organizador</a>
-                    <a href="#">Cadastrar corrida</a>
-                    <a href="#">Planos e preços</a>
-                    <a href="#">Suporte</a>
-                </Column>
-
-                <Column>
-                    <strong>Contato</strong>
-                    <a href="#">contato@ritmo.com.br</a>
-                </Column>
-
-                </FooterContent>
-            </FooterContainer>
-
-            <BottomBar>
-                <p>© 2026 Ritmo. Todos os direitos reservados.</p>
-
-                <PrivacyLinks>
-                <a href="#">Termos de Uso</a>
-                <a href="#">Privacidade</a>
-                </PrivacyLinks>
-            </BottomBar>
+            <Footer/>
         </main>
     )
 }
