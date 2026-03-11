@@ -115,8 +115,7 @@ export default function HomePage() {
               
 
               <h2>{race.title}</h2>
-
-              <p>{race.location}</p>
+              <p>{race.city}</p>
               <p>{race.date}</p>
 
               <DistancesRow>

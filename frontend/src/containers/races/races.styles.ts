@@ -1,25 +1,20 @@
 import styled from "styled-components";
-export const Botton_Bar = styled.div`
-  
-  position: fixo;
+export const Button_Bar = styled.div`
+  position: relative;
   top: 0;
   left: 0;
   width: 50%;
   height: 80px;
 
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   padding: 0 clamp(16px, 4vw, 40px);
 
   background-color: white;
   border-bottom: 1px solid #e5e7eb;
-  border-top: none;
 
-
-  button {
+  button{
     background: transparent;
     color: black;
     font-size: 14px;
@@ -28,13 +23,12 @@ export const Botton_Bar = styled.div`
     border: none;
     border-radius: 8px;
 
-  button:hover {
-    color: #1E88E5;
-    border: none;
-    border-radius: 8px;
-    background: #a6daff;
+    &:hover {
+      color: #1E88E5;
+      background: #a6daff;
+    }
   }
-`
+`;
 export const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -125,3 +119,177 @@ export const Titulo_race = styled.div`
     margin: 0;
   }
 `;
+
+export const RaceDetaisl = styled.div`
+  width: 20%;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  padding:  clamp(64px, 4vw, 120px);
+
+`
+
+export const About_race = styled.div`
+  
+  width: 60%;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  p {
+    padding: 0 16px;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+`;
+
+export const DistancesContainer = styled.div`
+  width: 60%;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  p {
+    padding: 0 16px;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  distance_tag {
+      display: inline-block;
+      flex-direction: row;}
+    }`
+  
+
+export  const Kits_Container = styled.div`
+  width: 60%;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  .kit_tag {
+    padding: 0 16px;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    flex-direction: column;
+  }
+    `
+export const Organisation_Container = styled.div`
+  width: 60%;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+    `
+export const Lotes_Container = styled.div`
+  width: 20%;
+  position: relative;
+  flex-direction: column;
+
+  background: white;
+
+  padding: 0 clamp(16px, 4vw, 40px);
+
+  margin-buttom: 3000px;
+
+
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 16px;
+    margin: 0;
+  }
+  .lote{
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }`
+
+export const Inforow = styled.div`
+  display: flex; 
+  flex-direction: row;
+  background: #F8FAFC;
+  `
