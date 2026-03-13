@@ -1,6 +1,6 @@
 import { races } from "../../data/races";
 import type{ Heads } from '../../types/Head.ts'
-import { ImageContainer, Button_Bar, ModalityBadge, Inforow, Lotes_Container, Kits_Container ,Titulo_race,Local_Data_Container,DistancesContainer, RaceDetaisl,About_race, Organisation_Container} from "./races.styles";
+import { ImageContainer, DistanceTag, Button_Bar, ModalityBadge, Lotes_Container, Kits_Container, Head_Lote ,Titulo_race,Local_Data_Container,DistancesContainer, RaceDetaisl,About_race, Organisation_Container, Lote, Status, InfoRow, Info_about, DistancesRow} from "./races.styles";
 import { useNavigate } from "react-router-dom";
 import Header from "../Head/Head";
 import Footer from "../Footer/Footer.tsx";
@@ -24,7 +24,7 @@ export default function RacePage() {
       }
 
     return (
-        <main style={{ marginTop: "80px"}}>
+        <main style={{ marginTop: "80px", background: "#fafafa" }}>
             <Header head_type={headType.head_type}/>
             <Button_Bar>
                 <Button onClick={() => navigate(`/`)}>← Voltar</Button>
@@ -45,28 +45,41 @@ export default function RacePage() {
                     <p> <FaCalendar /> {race.date}</p>
                 </Local_Data_Container>
             </ImageContainer>
-            < Inforow>
+
+            < Info_about>
                 <RaceDetaisl>
                     <About_race>
-                        <h2 className="about_race_string">Sobre a corrida</h2>
+                        <h4>Sobre a corrida</h4>
 
-                        <p>{race.about}</p>
-                        <p>{race.location_clue}</p>
-                        <p>{race.location_street}</p>
-                        <p>Largada ás {race.time.all.join(", ")}</p>
+                        <p className="description">
+                            {race.about}
+                        </p>
 
-                    </About_race>
+                        <div className="info_row">
+                            <span className="icon">📍</span>
+                            <div>
+                            <p className="location">{race.location_clue}</p>
+                            <p className="address">{race.location_street}</p>
+                            </div>
+                        </div>
+
+                        <div className="info_row">
+                            <span className="icon">⏰</span>
+                            <p className="time">Largada às {race.time.all.join(", ")}</p>
+                        </div>
+                        </About_race>
 
                     <DistancesContainer>
                         <h2> Distâncias disponíveis </h2>
-                        <p className="distance_tag">
-                            {race.distances.map((dist, index) => (
-                                <span key={index} >{ dist }</span>
-                            ))}
-                        </p>
+                        <DistancesRow>
+                        {race.distances.map((dist, index) => (
+                            <DistanceTag key={index}>{dist}</DistanceTag>
+                        ))}
+                        </DistancesRow>
                     </DistancesContainer>
 
                     <Kits_Container>
+                        <h2>O que está incluso</h2>
                         <ul className="kit_tag">
                             {race.kit.map((item, index) => (
                                 <li key={index}>{item}</li>
@@ -83,20 +96,28 @@ export default function RacePage() {
 
                 </RaceDetaisl>
 
-                <Lotes_Container> 
-                    {race.lotes.map(lote => (
-                        <div className="lote" key={lote.name}>
-                            <h3>{lote.name} - {lote.status}</h3>
+                <Lotes_Container>
 
-                            <ul>
-                                {lote.distances.map((dist, index) => (
-                                    <li key={index}>{dist.distance} - {dist.price}</li>
-                                ))}
-                            </ul>
-                        </div>
+                    <h2>Lotes e valores</h2>
+
+                    {race.lotes.map(lote => (
+                        <Lote key={lote.name} status={lote.status}>
+                        <Head_Lote>
+                            <h3>{lote.name}</h3>
+                            <Status status={lote.status}>{lote.status}</Status>
+                        </Head_Lote>
+                        {lote.distances.map((dist, index) => (
+                            <InfoRow key={index}>
+                            <span>{dist.distance}</span>
+                            <span>{dist.price}</span>
+                            </InfoRow>
+                        ))}
+
+                        </Lote>
                     ))}
-                </Lotes_Container>
-            </Inforow>
+
+                    </Lotes_Container>
+            </Info_about>
 
             <Footer/>
         </main>
