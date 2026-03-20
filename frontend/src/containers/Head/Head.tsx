@@ -2,9 +2,9 @@ import type { Heads } from "../../types/Head";
 import{
   HeaderContainer} from "../styles/global.styles";
 import { useParams } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 export default function Header({head_type}: Heads) {
-
+    const navigate = useNavigate();
     return(
     <HeaderContainer>
         <div className="logo-name">
@@ -21,8 +21,7 @@ export default function Header({head_type}: Heads) {
         </div>}
 
         <div className="entra-cadastro">
-          <button className="btn-conteudo">Conteúdo</button>
-          <button className="btn-entrar">Entrar</button>
+          <button onClick = {() => navigate(`/login/`)} className="btn-entrar">Entrar</button>
           <button className="btn-cadastro">Cadastro</button>
         </div>
 
