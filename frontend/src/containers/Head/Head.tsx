@@ -12,7 +12,7 @@ export default function Header({head_type}: Heads) {
           <h1>Ritmo</h1>
         </div>
         
-        { head_type && <div className="search-box">
+        { head_type == "home" && <div className="search-box">
           <button type="button">🔍</button>
           <input
             type="text"
@@ -20,10 +20,10 @@ export default function Header({head_type}: Heads) {
               />
         </div>}
 
-        <div className="entra-cadastro">
-          <button onClick = {() => navigate(`/login/`)} className="btn-entrar">Entrar</button>
+        { (head_type == "home" || head_type == "race"  ) && <div className="entra-cadastro">
+          <button onClick = {() => navigate("/login/")} className="btn-entrar">Entrar</button>
           <button className="btn-cadastro">Cadastro</button>
-        </div>
+        </div>}
 
     </HeaderContainer>
     )

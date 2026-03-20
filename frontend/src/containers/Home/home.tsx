@@ -33,7 +33,7 @@ export default function HomePage() {
   const [categoria, setCategoria] = useState("");
   
   const headType: Heads = {
-    head_type: true
+    head_type: 'home'
   }
 
   return (

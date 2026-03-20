@@ -20,7 +20,7 @@ export default function RacePage() {
     }
 
      const headType: Heads = {
-        head_type: false
+        head_type: 'race'
       }
 
     return (

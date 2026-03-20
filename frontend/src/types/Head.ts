@@ -1,3 +1,3 @@
 export interface Heads {
-    head_type : boolean
+    head_type : string
 }

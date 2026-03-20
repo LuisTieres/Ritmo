@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 80px;
 
-  box-sizing: border-box; /* ⭐ FIX */
+  box-sizing: border-box;  
 
   display: flex;
   align-items: center;
@@ -19,7 +19,9 @@ export const HeaderContainer = styled.header`
   border-bottom: 1px solid #e5e7eb;
 
   z-index: 1000;
-
+  &:not(:has(.search-box)):not(:has(.entra-cadastro)) {
+    justify-content: center;
+  }
   /* LOGO */
   .logo-name {
     display: flex;
